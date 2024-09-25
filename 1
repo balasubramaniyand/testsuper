@@ -1,0 +1,1080 @@
+s "::", port 5432
+superset_db1  | 2024-09-25 05:50:10.860 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+superset_db1     | 2024-09-25 05:50:10.891 UTC [27] LOG:  database system was shut down at 2024-09-25 05:45:49 UTC
+superset_db1     | 2024-09-25 05:50:10.925 UTC [1] LOG:  database system is ready to accept connections
+superset_cache1  | 1:C 25 Sep 2024 05:50:10.703 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+superset_cache1  | 1:C 25 Sep 2024 05:50:10.704 # Redis version=7.0.9, bits=64, commit=00000000, modified=0, pid=1, just started
+superset_cache1  | 1:C 25 Sep 2024 05:50:10.704 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.705 * monotonic clock: POSIX clock_gettime
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.708 * Running mode=standalone, port=6379.
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.708 # Server initialized
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.708 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.709 * Loading RDB produced by version 7.0.9
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.709 * RDB age 261 seconds
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.710 * RDB memory usage when created 1.69 Mb
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.710 * Done loading RDB, keys loaded: 10, keys expired: 0.
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.710 * DB loaded from disk: 0.000 seconds
+superset_cache1  | 1:M 25 Sep 2024 05:50:10.710 * Ready to accept connections
+superset_app1    | Skipping local overrides
+superset_init1   | Skipping local overrides
+superset_worker1  | Skipping local overrides
+superset_worker1       | Starting Celery worker...
+superset_worker1       | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker1       | Failed to create app
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker1       | Try 'celery --help' for help.
+superset_worker1       | 
+superset_worker1       | Error: Invalid value for '-A' / '--app': 
+superset_worker1       | Unable to load celery application.
+superset_worker1       | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker1       |     return find_app(value)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker1       |     sym = symbol_by_name(app, imp=imp)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker1       |     module = imp(module_name, package=package, **kwargs)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker1       |     return imp(module, package=package)
+superset_worker1       | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker1       |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker1       |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker1       |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker1       |     flask_app = create_app()
+superset_worker1       |   File "/app/superset/app.py", line 47, in create_app
+superset_worker1       |     raise ex
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | 
+superset_worker1       | Skipping local overrides
+superset_worker1       | Starting Celery worker...
+superset_worker1       | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker1       | Failed to create app
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker1       | Try 'celery --help' for help.
+superset_worker1       | 
+superset_worker_beat1  | Skipping local overrides
+superset_worker_beat1  | Starting Celery beat...
+superset_worker1       | Error: Invalid value for '-A' / '--app': 
+superset_worker1       | Unable to load celery application.
+superset_app1    | Starting web app...
+superset_app1          | [2024-09-25 05:50:12 +0000] [9] [INFO] Starting gunicorn 21.2.0
+superset_app1          | [2024-09-25 05:50:12 +0000] [9] [INFO] Listening at: http://0.0.0.0:8088 (9)
+superset_app1          | [2024-09-25 05:50:12 +0000] [9] [INFO] Using worker: gthread
+superset_app1          | [2024-09-25 05:50:12 +0000] [10] [INFO] Booting worker with pid: 10
+superset_app1          | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_init1    | 
+superset_init1         | ######################################################################
+superset_init1         | 
+superset_init1         | 
+superset_init1         | Init Step 1/4 [Starting] -- Applying DB migrations
+superset_init1         | 
+superset_worker_beat1  | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker_beat1  | Failed to create app
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker1       | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_init1         | 
+superset_init1         | ######################################################################
+superset_init1         | 
+superset_init1         | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_init1         | Failed to create app
+superset_init1         | Traceback (most recent call last):
+superset_init1         | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker_beat1  | Try 'celery --help' for help.
+superset_worker_beat1  | 
+superset_worker_beat1  | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker_beat1  | Error: Invalid value for '-A' / '--app': 
+superset_worker_beat1  | Unable to load celery application.
+superset_worker_beat1  | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker_beat1  |     return find_app(value)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker_beat1  |     sym = symbol_by_name(app, imp=imp)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker_beat1  |     module = imp(module_name, package=package, **kwargs)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker_beat1  |     return imp(module, package=package)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker_beat1  |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker_beat1  |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker_beat1  |     flask_app = create_app()
+superset_worker_beat1  |   File "/app/superset/app.py", line 47, in create_app
+superset_worker_beat1  |     raise ex
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | 
+superset_worker_beat1  | Skipping local overrides
+superset_worker_beat1  | Starting Celery beat...
+superset_worker_beat1  | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker_beat1  | Failed to create app
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker_beat1  | Try 'celery --help' for help.
+superset_worker_beat1  | 
+superset_worker_beat1  | Error: Invalid value for '-A' / '--app': 
+superset_worker_beat1  | Unable to load celery application.
+superset_worker_beat1  | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker_beat1  |     return find_app(value)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker_beat1  |     sym = symbol_by_name(app, imp=imp)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker_beat1  |     module = imp(module_name, package=package, **kwargs)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker_beat1  |     return imp(module, package=package)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker_beat1  |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker_beat1  |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker_beat1  |     flask_app = create_app()
+superset_worker_beat1  |   File "/app/superset/app.py", line 47, in create_app
+superset_worker_beat1  |     raise ex
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | 
+superset_worker_beat1  | Skipping local overrides
+superset_worker_beat1  | Starting Celery beat...
+superset_worker_beat1  | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker_beat1  | Failed to create app
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker_beat1  | Try 'celery --help' for help.
+superset_worker_beat1  | 
+superset_worker_beat1  | Error: Invalid value for '-A' / '--app': 
+superset_worker_beat1  | Unable to load celery application.
+superset_worker_beat1  | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker_beat1  |     return find_app(value)
+superset_init1         |   File "/app/superset/app.py", line 40, in create_app
+superset_init1         |     app_initializer.init_app()
+superset_init1         |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_init1         |     self.configure_session()
+superset_init1         |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_init1         |     if self.config["SESSION_SERVER_SIDE"]:
+superset_init1         | KeyError: 'SESSION_SERVER_SIDE'
+superset_init1         | Traceback (most recent call last):
+superset_init1         |   File "/usr/local/bin/superset", line 33, in <module>
+superset_init1         |     sys.exit(load_entry_point('apache-superset', 'console_scripts', 'superset')())
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1130, in __call__
+superset_init1         |     return self.main(*args, **kwargs)
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1055, in main
+superset_init1         |     rv = self.invoke(ctx)
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1654, in invoke
+superset_init1         |     super().invoke(ctx)
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
+superset_init1         |     return ctx.invoke(self.callback, **ctx.params)
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/click/core.py", line 760, in invoke
+superset_init1         |     return __callback(*args, **kwargs)
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/click/decorators.py", line 26, in new_func
+superset_init1         |     return f(get_current_context(), *args, **kwargs)
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/flask/cli.py", line 354, in decorator
+superset_init1         |     app = __ctx.ensure_object(ScriptInfo).load_app()
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/flask/cli.py", line 308, in load_app
+superset_init1         |     app = locate_app(import_name, name)
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/flask/cli.py", line 237, in locate_app
+superset_init1         |     return find_app_by_string(module, app_name)
+superset_init1         |   File "/usr/local/lib/python3.10/site-packages/flask/cli.py", line 165, in find_app_by_string
+superset_init1         |     app = attr(*args, **kwargs)
+superset_init1         |   File "/app/superset/app.py", line 47, in create_app
+superset_init1         |     raise ex
+superset_init1         |   File "/app/superset/app.py", line 40, in create_app
+superset_init1         |     app_initializer.init_app()
+superset_init1         |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_init1         |     self.configure_session()
+superset_init1         |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_init1         |     if self.config["SESSION_SERVER_SIDE"]:
+superset_init1         | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       |     return find_app(value)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker1       |     sym = symbol_by_name(app, imp=imp)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker1       |     module = imp(module_name, package=package, **kwargs)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker_beat1  | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker_beat1  |     sym = symbol_by_name(app, imp=imp)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker_beat1  |     module = imp(module_name, package=package, **kwargs)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker_beat1  |     return imp(module, package=package)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker_beat1  |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_app1          | Failed to create app
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_worker1       |     return imp(module, package=package)
+superset_worker1       |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker1       |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker1       | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker1       |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker1       |     flask_app = create_app()
+superset_worker1       |   File "/app/superset/app.py", line 47, in create_app
+superset_worker1       |     raise ex
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | 
+superset_worker1       | Skipping local overrides
+superset_worker1       | Starting Celery worker...
+superset_worker1       | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker1       | Failed to create app
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker_beat1  |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker_beat1  |     flask_app = create_app()
+superset_worker_beat1  |   File "/app/superset/app.py", line 47, in create_app
+superset_worker_beat1  |     raise ex
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | 
+superset_worker_beat1  | Skipping local overrides
+superset_worker_beat1  | Starting Celery beat...
+superset_worker_beat1  | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker_beat1  | Failed to create app
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker_beat1  | Try 'celery --help' for help.
+superset_worker_beat1  | 
+superset_worker_beat1  | Error: Invalid value for '-A' / '--app': 
+superset_worker_beat1  | Unable to load celery application.
+superset_worker_beat1  | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker_beat1  |     return find_app(value)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker_beat1  |     sym = symbol_by_name(app, imp=imp)
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:15 +0000] [10] [ERROR] Exception in worker process
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+superset_app1          |     worker.init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+superset_worker1       | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker1       | Try 'celery --help' for help.
+superset_worker1       | 
+superset_worker1       | Error: Invalid value for '-A' / '--app': 
+superset_worker1       | Unable to load celery application.
+superset_worker1       | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_app1          |     super().init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+superset_worker1       |     return find_app(value)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker1       |     sym = symbol_by_name(app, imp=imp)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker1       |     module = imp(module_name, package=package, **kwargs)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker1       | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker1       |     return imp(module, package=package)
+superset_worker1       |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker1       |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_app1          |     self.load_wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+superset_app1          |     self.wsgi = self.app.wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+superset_app1          |     self.callable = self.load()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+superset_app1          |     return self.load_wsgiapp()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+superset_app1          |     return util.import_app(self.app_uri)
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 424, in import_app
+superset_app1          |     app = app(*args, **kwargs)
+superset_app1          |   File "/app/superset/app.py", line 47, in create_app
+superset_app1          |     raise ex
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker1       |     flask_app = create_app()
+superset_worker1       |   File "/app/superset/app.py", line 47, in create_app
+superset_worker1       |     raise ex
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | 
+superset_worker1       | Skipping local overrides
+superset_worker1       | Starting Celery worker...
+superset_worker1       | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker1       | Failed to create app
+superset_worker1       | Traceback (most recent call last):
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker1       | Try 'celery --help' for help.
+superset_worker1       | 
+superset_worker1       | Error: Invalid value for '-A' / '--app': 
+superset_worker1       | Unable to load celery application.
+superset_worker1       | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker_beat1  |     module = imp(module_name, package=package, **kwargs)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker1       |     return find_app(value)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker1       |     sym = symbol_by_name(app, imp=imp)
+superset_worker_beat1  |     return imp(module, package=package)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker_beat1  |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker_beat1  |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker_beat1  |     flask_app = create_app()
+superset_worker_beat1  |   File "/app/superset/app.py", line 47, in create_app
+superset_worker_beat1  |     raise ex
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | 
+superset_worker_beat1  | Skipping local overrides
+superset_worker_beat1  | Starting Celery beat...
+superset_worker_beat1  | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker_beat1  | Failed to create app
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker_beat1  | Try 'celery --help' for help.
+superset_worker_beat1  | 
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:15 +0000] [10] [INFO] Worker exiting (pid: 10)
+superset_app1          | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_app1          | [2024-09-25 05:50:16 +0000] [9] [ERROR] Worker (pid:10) exited with code 3
+superset_app1          | [2024-09-25 05:50:16 +0000] [9] [ERROR] Shutting down: Master
+superset_app1          | [2024-09-25 05:50:16 +0000] [9] [ERROR] Reason: Worker failed to boot.
+superset_app1          | Skipping local overrides
+superset_app1          | Starting web app...
+superset_app1          | [2024-09-25 05:50:18 +0000] [8] [INFO] Starting gunicorn 21.2.0
+superset_app1          | [2024-09-25 05:50:18 +0000] [8] [INFO] Listening at: http://0.0.0.0:8088 (8)
+superset_app1          | [2024-09-25 05:50:18 +0000] [8] [INFO] Using worker: gthread
+superset_app1          | [2024-09-25 05:50:18 +0000] [9] [INFO] Booting worker with pid: 9
+superset_app1          | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_app1          | Failed to create app
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:21 +0000] [9] [ERROR] Exception in worker process
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+superset_app1          |     worker.init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+superset_app1          |     super().init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+superset_app1          |     self.load_wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+superset_app1          |     self.wsgi = self.app.wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+superset_app1          |     self.callable = self.load()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+superset_app1          |     return self.load_wsgiapp()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+superset_app1          |     return util.import_app(self.app_uri)
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 424, in import_app
+superset_app1          |     app = app(*args, **kwargs)
+superset_app1          |   File "/app/superset/app.py", line 47, in create_app
+superset_app1          |     raise ex
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:21 +0000] [9] [INFO] Worker exiting (pid: 9)
+superset_app1          | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_app1          | [2024-09-25 05:50:22 +0000] [8] [ERROR] Worker (pid:9) exited with code 3
+superset_app1          | [2024-09-25 05:50:22 +0000] [8] [ERROR] Shutting down: Master
+superset_app1          | [2024-09-25 05:50:22 +0000] [8] [ERROR] Reason: Worker failed to boot.
+superset_app1          | Skipping local overrides
+superset_app1          | Starting web app...
+superset_app1          | [2024-09-25 05:50:24 +0000] [8] [INFO] Starting gunicorn 21.2.0
+superset_app1          | [2024-09-25 05:50:24 +0000] [8] [INFO] Listening at: http://0.0.0.0:8088 (8)
+superset_app1          | [2024-09-25 05:50:24 +0000] [8] [INFO] Using worker: gthread
+superset_app1          | [2024-09-25 05:50:24 +0000] [9] [INFO] Booting worker with pid: 9
+superset_app1          | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_app1          | Failed to create app
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:27 +0000] [9] [ERROR] Exception in worker process
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+superset_app1          |     worker.init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+superset_app1          |     super().init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+superset_app1          |     self.load_wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+superset_app1          |     self.wsgi = self.app.wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+superset_app1          |     self.callable = self.load()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+superset_app1          |     return self.load_wsgiapp()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+superset_app1          |     return util.import_app(self.app_uri)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker1       |     module = imp(module_name, package=package, **kwargs)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker1       |     return imp(module, package=package)
+superset_worker1       |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker1       |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker1       | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker1       |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker1       |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker1       |     flask_app = create_app()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 424, in import_app
+superset_app1          |     app = app(*args, **kwargs)
+superset_app1          |   File "/app/superset/app.py", line 47, in create_app
+superset_app1          |     raise ex
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_worker_beat1  | Error: Invalid value for '-A' / '--app': 
+superset_worker_beat1  | Unable to load celery application.
+superset_worker_beat1  | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker_beat1  |     return find_app(value)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker_beat1  |     sym = symbol_by_name(app, imp=imp)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker_beat1  |     module = imp(module_name, package=package, **kwargs)
+superset_worker1       |   File "/app/superset/app.py", line 47, in create_app
+superset_worker1       |     raise ex
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | 
+superset_worker1       | Skipping local overrides
+superset_worker1       | Starting Celery worker...
+superset_worker1       | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker1       | Failed to create app
+superset_worker1       | Traceback (most recent call last):
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker_beat1  |     return imp(module, package=package)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker_beat1  |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker1       | Try 'celery --help' for help.
+superset_worker1       | 
+superset_worker1       | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker_beat1  |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:27 +0000] [9] [INFO] Worker exiting (pid: 9)
+superset_app1          | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_app1          | [2024-09-25 05:50:28 +0000] [8] [ERROR] Worker (pid:9) exited with code 3
+superset_app1          | [2024-09-25 05:50:28 +0000] [8] [ERROR] Shutting down: Master
+superset_app1          | [2024-09-25 05:50:28 +0000] [8] [ERROR] Reason: Worker failed to boot.
+superset_app1          | Skipping local overrides
+superset_app1          | Starting web app...
+superset_app1          | [2024-09-25 05:50:31 +0000] [8] [INFO] Starting gunicorn 21.2.0
+superset_app1          | [2024-09-25 05:50:31 +0000] [8] [INFO] Listening at: http://0.0.0.0:8088 (8)
+superset_app1          | [2024-09-25 05:50:31 +0000] [8] [INFO] Using worker: gthread
+superset_app1          | [2024-09-25 05:50:31 +0000] [9] [INFO] Booting worker with pid: 9
+superset_app1          | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_app1          | Failed to create app
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       | Error: Invalid value for '-A' / '--app': 
+superset_worker1       | Unable to load celery application.
+superset_worker1       | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker1       |     return find_app(value)
+superset_worker_beat1  |     flask_app = create_app()
+superset_worker_beat1  |   File "/app/superset/app.py", line 47, in create_app
+superset_worker_beat1  |     raise ex
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker1       |     sym = symbol_by_name(app, imp=imp)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker1       |     module = imp(module_name, package=package, **kwargs)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker1       |     return imp(module, package=package)
+superset_worker1       |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker1       |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | 
+superset_worker_beat1  | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker_beat1  | Skipping local overrides
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker1       |     flask_app = create_app()
+superset_worker1       |   File "/app/superset/app.py", line 47, in create_app
+superset_worker1       |     raise ex
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  | Starting Celery beat...
+superset_worker_beat1  | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker_beat1  | Failed to create app
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | 
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | Skipping local overrides
+superset_worker1       | Starting Celery worker...
+superset_worker1       | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker1       | Failed to create app
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_app1          | [2024-09-25 05:50:34 +0000] [9] [ERROR] Exception in worker process
+superset_app1          | Traceback (most recent call last):
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker1       | Try 'celery --help' for help.
+superset_worker1       | 
+superset_worker1       | Error: Invalid value for '-A' / '--app': 
+superset_worker1       | Unable to load celery application.
+superset_worker1       | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker1       | Traceback (most recent call last):
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker_beat1  | Try 'celery --help' for help.
+superset_worker_beat1  | 
+superset_worker_beat1  | Error: Invalid value for '-A' / '--app': 
+superset_worker_beat1  | Unable to load celery application.
+superset_worker_beat1  | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker_beat1  |     return find_app(value)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker_beat1  |     sym = symbol_by_name(app, imp=imp)
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+superset_app1          |     worker.init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+superset_app1          |     super().init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+superset_app1          |     self.load_wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+superset_app1          |     self.wsgi = self.app.wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+superset_app1          |     self.callable = self.load()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+superset_app1          |     return self.load_wsgiapp()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+superset_app1          |     return util.import_app(self.app_uri)
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 424, in import_app
+superset_app1          |     app = app(*args, **kwargs)
+superset_app1          |   File "/app/superset/app.py", line 47, in create_app
+superset_app1          |     raise ex
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker_beat1  |     module = imp(module_name, package=package, **kwargs)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker_beat1  |     return imp(module, package=package)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker_beat1  |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker_beat1  |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker_beat1  |     flask_app = create_app()
+superset_worker_beat1  |   File "/app/superset/app.py", line 47, in create_app
+superset_worker_beat1  |     raise ex
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | 
+superset_worker_beat1  | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker_beat1  | Skipping local overrides
+superset_worker_beat1  | Starting Celery beat...
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker1       |     return find_app(value)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker1       |     sym = symbol_by_name(app, imp=imp)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker1       |     module = imp(module_name, package=package, **kwargs)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker1       |     return imp(module, package=package)
+superset_worker1       |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker1       |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:34 +0000] [9] [INFO] Worker exiting (pid: 9)
+superset_app1          | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_app1          | [2024-09-25 05:50:34 +0000] [8] [ERROR] Worker (pid:9) exited with code 3
+superset_app1          | [2024-09-25 05:50:34 +0000] [8] [ERROR] Shutting down: Master
+superset_app1          | [2024-09-25 05:50:34 +0000] [8] [ERROR] Reason: Worker failed to boot.
+superset_app1          | Skipping local overrides
+superset_app1          | Starting web app...
+superset_app1          | [2024-09-25 05:50:37 +0000] [9] [INFO] Starting gunicorn 21.2.0
+superset_app1          | [2024-09-25 05:50:37 +0000] [9] [INFO] Listening at: http://0.0.0.0:8088 (9)
+superset_app1          | [2024-09-25 05:50:37 +0000] [9] [INFO] Using worker: gthread
+superset_app1          | [2024-09-25 05:50:37 +0000] [10] [INFO] Booting worker with pid: 10
+superset_app1          | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_app1          | Failed to create app
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:40 +0000] [10] [ERROR] Exception in worker process
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+superset_app1          |     worker.init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+superset_app1          |     super().init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+superset_app1          |     self.load_wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+superset_app1          |     self.wsgi = self.app.wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+superset_app1          |     self.callable = self.load()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+superset_app1          |     return self.load_wsgiapp()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+superset_app1          |     return util.import_app(self.app_uri)
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 424, in import_app
+superset_app1          |     app = app(*args, **kwargs)
+superset_app1          |   File "/app/superset/app.py", line 47, in create_app
+superset_app1          |     raise ex
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:40 +0000] [10] [INFO] Worker exiting (pid: 10)
+superset_app1          | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_app1          | [2024-09-25 05:50:41 +0000] [9] [ERROR] Worker (pid:10) exited with code 3
+superset_app1          | [2024-09-25 05:50:41 +0000] [9] [ERROR] Shutting down: Master
+superset_app1          | [2024-09-25 05:50:41 +0000] [9] [ERROR] Reason: Worker failed to boot.
+superset_app1          | Skipping local overrides
+superset_app1          | Starting web app...
+superset_app1          | [2024-09-25 05:50:44 +0000] [8] [INFO] Starting gunicorn 21.2.0
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_app1          | [2024-09-25 05:50:44 +0000] [8] [INFO] Listening at: http://0.0.0.0:8088 (8)
+superset_app1          | [2024-09-25 05:50:44 +0000] [8] [INFO] Using worker: gthread
+superset_app1          | [2024-09-25 05:50:44 +0000] [9] [INFO] Booting worker with pid: 9
+superset_app1          | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_app1          | Failed to create app
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:47 +0000] [9] [ERROR] Exception in worker process
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+superset_app1          |     worker.init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+superset_app1          |     super().init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+superset_app1          |     self.load_wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+superset_app1          |     self.wsgi = self.app.wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+superset_app1          |     self.callable = self.load()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+superset_app1          |     return self.load_wsgiapp()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+superset_app1          |     return util.import_app(self.app_uri)
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 424, in import_app
+superset_app1          |     app = app(*args, **kwargs)
+superset_app1          |   File "/app/superset/app.py", line 47, in create_app
+superset_app1          |     raise ex
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:47 +0000] [9] [INFO] Worker exiting (pid: 9)
+superset_app1          | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_app1          | [2024-09-25 05:50:48 +0000] [8] [ERROR] Worker (pid:9) exited with code 3
+superset_app1          | [2024-09-25 05:50:48 +0000] [8] [ERROR] Shutting down: Master
+superset_app1          | [2024-09-25 05:50:48 +0000] [8] [ERROR] Reason: Worker failed to boot.
+superset_app1          | Skipping local overrides
+superset_app1          | Starting web app...
+superset_app1          | [2024-09-25 05:50:54 +0000] [8] [INFO] Starting gunicorn 21.2.0
+superset_app1          | [2024-09-25 05:50:54 +0000] [8] [INFO] Listening at: http://0.0.0.0:8088 (8)
+superset_app1          | [2024-09-25 05:50:54 +0000] [8] [INFO] Using worker: gthread
+superset_app1          | [2024-09-25 05:50:54 +0000] [9] [INFO] Booting worker with pid: 9
+superset_app1          | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_app1          | Failed to create app
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker1       |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker_beat1  | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker_beat1  | Failed to create app
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:57 +0000] [9] [ERROR] Exception in worker process
+superset_app1          | Traceback (most recent call last):
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+superset_app1          |     worker.init_process()
+superset_worker1       |     flask_app = create_app()
+superset_worker1       |   File "/app/superset/app.py", line 47, in create_app
+superset_worker1       |     raise ex
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | 
+superset_worker1       | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker1       | Skipping local overrides
+superset_worker1       | Starting Celery worker...
+superset_worker1       | 'FLASK_ENV' is deprecated and will not be used in Flask 2.3. Use 'FLASK_DEBUG' instead.
+superset_worker1       | Failed to create app
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/gthread.py", line 95, in init_process
+superset_app1          |     super().init_process()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 134, in init_process
+superset_app1          |     self.load_wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+superset_app1          |     self.wsgi = self.app.wsgi()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/base.py", line 67, in wsgi
+superset_app1          |     self.callable = self.load()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+superset_app1          |     return self.load_wsgiapp()
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+superset_app1          |     return util.import_app(self.app_uri)
+superset_app1          |   File "/usr/local/lib/python3.10/site-packages/gunicorn/util.py", line 424, in import_app
+superset_app1          |     app = app(*args, **kwargs)
+superset_app1          |   File "/app/superset/app.py", line 47, in create_app
+superset_app1          |     raise ex
+superset_app1          |   File "/app/superset/app.py", line 40, in create_app
+superset_app1          |     app_initializer.init_app()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_app1          |     self.configure_session()
+superset_app1          |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_app1          |     if self.config["SESSION_SERVER_SIDE"]:
+superset_app1          | KeyError: 'SESSION_SERVER_SIDE'
+superset_app1          | [2024-09-25 05:50:57 +0000] [9] [INFO] Worker exiting (pid: 9)
+superset_app1          | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_app1          | [2024-09-25 05:50:57 +0000] [8] [ERROR] Worker (pid:9) exited with code 3
+superset_app1          | [2024-09-25 05:50:57 +0000] [8] [ERROR] Shutting down: Master
+superset_app1          | [2024-09-25 05:50:57 +0000] [8] [ERROR] Reason: Worker failed to boot.
+superset_worker1       | Try 'celery --help' for help.
+superset_worker1       | 
+superset_worker1       | Error: Invalid value for '-A' / '--app': 
+superset_worker1       | Unable to load celery application.
+superset_worker1       | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker1       | Traceback (most recent call last):
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker1       |     return find_app(value)
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | Usage: celery [OPTIONS] COMMAND [ARGS]...
+superset_worker_beat1  | Try 'celery --help' for help.
+superset_worker_beat1  | 
+superset_worker_beat1  | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_worker_beat1  | Error: Invalid value for '-A' / '--app': 
+superset_worker_beat1  | Unable to load celery application.
+superset_worker_beat1  | While trying to load the module superset.tasks.celery_app:app the following error occurred:
+superset_worker_beat1  | Traceback (most recent call last):
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/bin/celery.py", line 58, in convert
+superset_worker_beat1  |     return find_app(value)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker_beat1  |     sym = symbol_by_name(app, imp=imp)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker_beat1  |     module = imp(module_name, package=package, **kwargs)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker_beat1  |     return imp(module, package=package)
+superset_worker_beat1  |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker_beat1  |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker_beat1  |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker_beat1  |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker_beat1  |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker_beat1  |     flask_app = create_app()
+superset_worker_beat1  |   File "/app/superset/app.py", line 47, in create_app
+superset_worker_beat1  |     raise ex
+superset_worker_beat1  |   File "/app/superset/app.py", line 40, in create_app
+superset_worker_beat1  |     app_initializer.init_app()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker_beat1  |     self.configure_session()
+superset_worker_beat1  |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker_beat1  |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker_beat1  | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker_beat1  | 
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/app/utils.py", line 383, in find_app
+superset_worker1       |     sym = symbol_by_name(app, imp=imp)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/kombu/utils/imports.py", line 59, in symbol_by_name
+superset_worker1       |     module = imp(module_name, package=package, **kwargs)
+superset_worker1       |   File "/usr/local/lib/python3.10/site-packages/celery/utils/imports.py", line 109, in import_from_cwd
+superset_worker1       |     return imp(module, package=package)
+superset_worker1       |   File "/usr/local/lib/python3.10/importlib/__init__.py", line 126, in import_module
+superset_worker1       |     return _bootstrap._gcd_import(name[level:], package, level)
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+superset_worker1       |   File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+superset_worker1       |   File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+superset_worker1       |   File "/app/superset/tasks/celery_app.py", line 31, in <module>
+superset_worker1       |     flask_app = create_app()
+superset_worker1       |   File "/app/superset/app.py", line 47, in create_app
+superset_worker1       |     raise ex
+superset_worker1       |   File "/app/superset/app.py", line 40, in create_app
+superset_worker1       |     app_initializer.init_app()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 471, in init_app
+superset_worker1       |     self.configure_session()
+superset_worker1       |   File "/app/superset/initialization/__init__.py", line 461, in configure_session
+superset_worker1       |     if self.config["SESSION_SERVER_SIDE"]:
+superset_worker1       | KeyError: 'SESSION_SERVER_SIDE'
+superset_worker1       | 
+superset_worker1       | Loaded your LOCAL configuration at [/app/pythonpath/superset_config.py]
+superset_app1 exited with code 3
+
